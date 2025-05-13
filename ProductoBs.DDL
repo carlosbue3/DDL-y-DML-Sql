@@ -18,3 +18,5 @@ alter table Productos
 ADD Constraint FK_CodigoF
 foreign key (CodigoF) references Fabricantes(CodigoF);
 
+
+
