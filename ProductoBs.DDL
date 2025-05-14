@@ -1,7 +1,5 @@
-drop database ProductosBs;
 create database ProductosBs;
 Use ProductosBs;
-
 
 create table Fabricantes(
 CodigoF int auto_increment primary key,
