@@ -18,13 +18,13 @@ select Nombre, round(Precio,0) as "precio" from productos;
 
 select Nombre, truncate(Precio, 0) from productos;
 
-Select CodigoF as "fabricantes" from Productos;
+Select Codigo_fabricante as "fabricantes" from Productos;
 
-SELECT DISTINCT CodigoF as "fabricantes" FROM productos;
+SELECT DISTINCT Codigo_fabricante as "fabricantes" FROM productos;
 
-SELECT Nombre FROM fabricantes ORDER BY CodigoF ASC;
+SELECT Nombre FROM fabricantes ORDER BY Codigo_fabricante ASC;
 
-SELECT Nombre FROM fabricantes ORDER BY CodigoF DESC;
+SELECT Nombre FROM fabricantes ORDER BY Codigo_fabricante DESC;
 
 SELECT Nombre as "Primer Lugar" FROM Productos ORDER BY Codigo ASC;
 
@@ -38,7 +38,7 @@ SELECT Nombre, precio FROM Productos ORDER BY precio ASC limit 1;
 
 SELECT Nombre, precio FROM Productos ORDER BY precio DESC limit 1;
 
-SELECT Nombre FROM productos WHERE CodigoF = 2;
+SELECT Nombre FROM productos WHERE Codigo_fabricante = 2;
 
 SELECT Nombre FROM productos WHERE Precio <= 120;
 
@@ -50,13 +50,28 @@ SELECT Nombre FROM Productos WHERE Precio > 80 AND Precio <= 300;
 
 SELECT Nombre FROM productos WHERE Precio BETWEEN 60 and 200 ;
 
-SELECT Nombre FROM Productos WHERE Precio > 200 AND CodigoF = 6;
+SELECT Nombre FROM Productos WHERE Precio > 200 AND Codigo_fabricante = 6;
 
-SELECT Nombre FROM productos WHERE CodigoF =1 or codigof =3 or codigof =5;
+SELECT Nombre FROM productos WHERE Codigo_fabricante =1 or Codigo_fabricante =3 or Codigo_fabricante =5;
 
-SELECT Nombre FROM productos WHERE CodigoF IN (1, 3, 5);
+SELECT Nombre FROM productos WHERE Codigo_fabricante IN (1, 3, 5);
 
-Select Nombre,precio, (precio * 100) as "precio en centimos" from Productos;
+Select Nombre,precio, (precio * 100) as "centimos" from Productos;
 
+select Nombre from fabricantes where ucase(left(Nombre, 1))="s";
 
+select Nombre from fabricantes where ucase(right(Nombre, 1))="e";
 
+select Nombre from fabricantes where ucase(left(Nombre,10))="W";
+
+SELECT Nombre FROM fabricantes WHERE Nombre LIKE '%W%';
+
+select Nombre from fabricantes where length(nombre)=4;
+
+SELECT Nombre FROM productos WHERE Nombre LIKE '%Portatil%';
+
+SELECT Nombre FROM productos WHERE precio <215 and Nombre LIKE '%monitor%';
+
+SELECT Nombre,precio FROM productos WHERE precio >=180 ORDER BY precio DESC;
+
+SELECT Nombre,precio FROM productos WHERE precio >=180 ORDER BY Nombre ASC;	
