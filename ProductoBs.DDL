@@ -15,6 +15,3 @@ Codigo_fabricante Int
 alter table Productos
 ADD Constraint FK_Codigo_fabricante
 foreign key (Codigo_fabricante) references Fabricantes(Codigo);
-
-
-
